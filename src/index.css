@@ -11,8 +11,8 @@
   --bg-glass: rgba(255, 255, 255, 0.7);
 
   /* Brand Colors */
-  --color-gold: #C6A87C; /* Kept for legacy reference if needed */
-  --color-brand: #050505; /* Brand is now Deep Black */
+  --color-gold: #8C7A5B;
+  --color-brand: var(--color-gold);
 
   --text-primary: #050505;   /* Deep Black */
   --text-secondary: #52525b; /* Zinc 600 */
@@ -27,7 +27,7 @@
   --font-sans: 'Outfit', sans-serif;
   
   /* Spacing Rhythm */
-  --space-section: 120px;
+  --space-section: 160px;
   --space-block: 60px;
   
   /* Radius */

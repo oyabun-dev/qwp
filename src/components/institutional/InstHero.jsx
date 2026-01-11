@@ -58,6 +58,14 @@ const InstHero = () => {
                 transition={{ duration: 1, delay: 0.2 }}
                 className="lg:col-span-5 relative h-[600px] w-full hidden md:block"
             >
+                <motion.div 
+                    initial={{ height: 0 }}
+                    animate={{ height: "4rem" }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="w-px bg-[var(--color-brand)] mb-8"
+                />
+
+                <Badge className="mb-6 bg-white/5 border-white/10 text-[var(--color-brand)]">Our Vision</Badge>
                 <div className="absolute inset-0 bg-[var(--bg-subtle)] rounded-[3rem] overflow-hidden">
                     <img 
                         src="/assets/fluid_gold_silk_abstract_1768079456452.png" 

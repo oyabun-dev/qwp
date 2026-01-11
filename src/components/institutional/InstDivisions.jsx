@@ -46,45 +46,60 @@ const InstDivisions = () => {
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
             
             {/* Intro Text - Sticky Absolute */}
-            <div className="absolute top-24 left-6 md:left-10 z-10 max-w-sm">
-                <Badge className="mb-4">Divisions</Badge>
+            <div className="absolute top-24 left-6 md:left-16 z-10 max-w-sm pointer-events-none">
+                <Badge className="mb-4 bg-white/10 backdrop-blur-md border-black/5">Divisions</Badge>
                 <h2 className="type-h2 mb-4 leading-tight">Structured for <br/> Impact.</h2>
                 <p className="type-body text-[var(--text-secondary)] text-sm">
                     Our holdings operate independently but share a unified strategic backbone.
                 </p>
             </div>
 
-            <motion.div style={{ x }} className="flex gap-10 pl-[40vw] md:pl-[30vw] min-w-max">
+            <motion.div style={{ x }} className="flex gap-6 md:gap-10 pl-[15vw] md:pl-[30vw] min-w-max items-center">
                 {divisions.map((division, index) => (
                     <Card 
                         key={index} 
                         variant={division.variant} 
-                        className="w-[85vw] md:w-[600px] h-[60vh] flex flex-col justify-between p-10 md:p-16 shrink-0"
+                        className={`
+                            w-[85vw] md:w-[600px] h-[55vh] md:h-[60vh] flex flex-col justify-center gap-12 p-8 md:p-12 shrink-0 
+                            transition-all duration-500 hover:border-[var(--color-brand)] group
+                            ${division.variant === 'black' ? 'hover:shadow-[0_0_30px_rgba(223,178,117,0.15)]' : 'hover:shadow-xl'}
+                        `}
                     >
                         <div>
-                            <div className="flex items-center gap-3 mb-6">
-                                <span className="w-10 h-10 rounded-full bg-current opacity-20"></span>
-                                <span className="text-sm font-semibold tracking-widest uppercase opacity-60">{division.role}</span>
+                            <div className="flex items-center gap-3 mb-2">
+                                <span className={`w-3 h-3 rounded-full ${division.variant === 'black' ? 'bg-[var(--color-brand)]' : 'bg-[var(--color-brand)]'}`}></span>
+                                <span className="text-xs md:text-sm font-bold tracking-widest uppercase opacity-60">{division.role}</span>
                             </div>
-                            <h3 className="type-display text-4xl md:text-6xl mb-6">{division.name}</h3>
+                            <h3 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-4 transition-colors duration-300 break-words">
+                                <span className="group-hover:text-[var(--color-brand)] transition-colors duration-300">Quraysh</span><br/> {division.name.replace('Quraysh ', '')}
+                            </h3>
                         </div>
                         
                         <div>
-                            <p className="text-lg md:text-xl font-light opacity-80 mb-8 max-w-md">{division.desc}</p>
-                            <Button variant={division.variant === 'black' ? 'secondary' : 'primary' } className={division.variant === 'black' ? 'border-white/20 text-white hover:bg-white hover:text-black' : ''}>
+                            <p className="text-base md:text-xl font-light opacity-80 mb-8 max-w-md">{division.desc}</p>
+                            <Button 
+                                variant={division.variant === 'black' ? 'secondary' : 'primary' } 
+                                className={`
+                                    ${division.variant === 'black' 
+                                        ? 'border-white/20 text-white hover:bg-transparent hover:border-[var(--color-brand)] hover:text-[var(--color-brand)]' 
+                                        : 'hover:bg-transparent hover:border-[var(--color-brand)] hover:text-[var(--color-brand)]'
+                                    }
+                                    transition-all duration-300 border
+                                `}
+                            >
                                 View Division
                             </Button>
                         </div>
                     </Card>
                 ))}
                 
-                {/* Final Call to Action Card in Horizontal Scroll */}
-                <Card variant="glass" className="w-[85vw] md:w-[600px] h-[60vh] flex flex-col justify-center items-center text-center p-10 shrink-0 bg-[var(--bg-subtle)]">
+                {/* Final Call to Action Card */}
+                <Card variant="glass" className="w-[85vw] md:w-[600px] h-[55vh] md:h-[60vh] flex flex-col justify-center gap-8 items-center text-center p-10 shrink-0 bg-[var(--bg-subtle)] border transition-all duration-300 hover:border-[var(--color-brand)]">
                     <h3 className="type-h1 mb-6">Join the Ecosystem</h3>
                     <p className="type-body text-[var(--text-secondary)] mb-8 max-w-md">
                         We are aggressive in our expansion. If you have a project that fits our mandate, we want to hear from you.
                     </p>
-                    <Button variant="primary" size="lg">Get in touch</Button>
+                    <Button variant="brand" size="lg">Get in touch</Button>
                 </Card>
             </motion.div>
         </div>

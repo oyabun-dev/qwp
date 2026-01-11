@@ -24,9 +24,12 @@ const InstApproach = () => {
                 <Card key={i} variant="white" className="group text-left h-full">
                    <div className="flex flex-col h-full justify-between">
                        <div>
-                            <span className="type-display text-4xl text-[var(--border-dark)] opacity-20 mb-6 block group-hover:text-[var(--text-primary)] group-hover:opacity-100 transition-all duration-500">
-                                {step.num}
-                            </span>
+                            <div className="flex items-start justify-between mb-8 group-hover:translate-x-2 transition-transform duration-300">
+                                <div className="relative">
+                                    <span className="text-sm font-mono text-[var(--text-tertiary)] group-hover:text-[var(--color-brand)] transition-colors">0{i + 1}</span>
+                                    <span className="absolute -left-4 top-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-brand)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                </div>
+                            </div>
                             <h3 className="type-h2 mb-4">{step.title}</h3>
                             <p className="type-body text-[var(--text-secondary)] text-sm">{step.desc}</p>
                        </div>

@@ -10,9 +10,16 @@ const InstFooter = () => {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
                 {/* Brand */}
                 <div>
-                    <span className="font-bold text-xl tracking-tight text-white font-sans block mb-2">
-                        Quraysh Holding
-                    </span>
+                    <div className="flex items-center gap-3 mb-4">
+                        <img 
+                            src="/assets/logo.png" 
+                            alt="Quraysh Logo" 
+                            className="h-12 w-auto object-contain brightness-0 invert" 
+                        />
+                        <span className="font-bold text-xl tracking-tight text-white font-sans">
+                            Quraysh Holding
+                        </span>
+                    </div>
                     <span className="text-sm text-gray-500">Dakar — Global Operations</span>
                 </div>
 

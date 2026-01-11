@@ -14,7 +14,7 @@ const Section = ({
 
   return (
     <section id={id} className={`py-[var(--space-section)] ${className}`}>
-      <div className={`${maxWidths[width]} mx-auto px-6 md:px-10`}>
+      <div className={`${maxWidths[width]} mx-auto px-6 md:px-16`}>
         {children}
       </div>
     </section>

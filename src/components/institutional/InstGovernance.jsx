@@ -29,6 +29,11 @@ const InstGovernance = () => {
 
             {/* Content */}
             <div className="space-y-12">
+                {/* Top Content */}
+                <div className="mb-20">
+                    <div className="w-12 h-1 bg-[var(--color-brand)] mb-8"></div>
+                    <h2 className="type-h2 mb-8"></h2>
+                </div>
                 {[
                     { title: "Capital Allocation", desc: "Rigorous investment committees ensure capital is deployed only where clear, long-term ROI is visible." },
                     { title: "Risk Management", desc: "Proactive identification of market, operational, and regulatory risks." },

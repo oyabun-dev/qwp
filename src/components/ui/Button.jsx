@@ -12,9 +12,9 @@ const Button = ({
   const baseStyles = "inline-flex items-center gap-2 rounded-full font-medium transition-all duration-300 cursor-pointer active:scale-95";
   
   const variants = {
-    primary: "bg-[var(--bg-inverse)] text-[var(--text-inverse)] hover:opacity-90",
-    brand: "bg-[var(--color-brand)] text-white hover:bg-gray-800 hover:text-white", 
-    secondary: "bg-[var(--bg-core)] text-[var(--text-primary)] border border-[var(--border-medium)] hover:bg-[var(--bg-subtle)] hover:border-[var(--text-primary)]",
+    primary: "bg-[var(--bg-inverse)] text-[var(--text-inverse)] border border-transparent hover:bg-transparent hover:text-[var(--text-primary)] hover:border-[var(--text-primary)]",
+    brand: "bg-[var(--color-brand)] text-white border border-transparent hover:brightness-90", 
+    secondary: "bg-transparent text-[var(--text-primary)] border border-[var(--border-medium)] hover:border-[var(--color-brand)] hover:text-[var(--color-brand)]",
     ghost: "bg-transparent text-[var(--text-primary)] hover:bg-[var(--bg-subtle)]"
   };
 
