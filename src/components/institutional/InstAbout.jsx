@@ -18,8 +18,9 @@ const InstAbout = () => {
                         viewport={{ once: true }}
                         className="type-h1 text-[var(--text-primary)] mb-8"
                      >
-                        Curating <br />
-                        Excellence.
+                        An Operating <br />
+                        Holding, Not <br />
+                        a Concept.
                      </motion.h2>
                 </div>
             </div>
@@ -28,16 +29,12 @@ const InstAbout = () => {
             <div className="space-y-16">
                 {[
                     {
-                        title: "The Vision",
-                        text: "Quraysh was founded on the belief that true value lies at the intersection of tradition and innovation. We identify high-potential sectors and build institutions that define them."
+                        title: "The Mandate",
+                        text: "Quraysh is a strategic holding company that designs, launches, and scales businesses through structured execution."
                     },
                     {
-                        title: "Our Mandate",
-                        text: "We don't just invest; we operate. Our mandate is to bring structural discipline, digital transformation, and global standards to local markets."
-                    },
-                    {
-                        title: "The Collective",
-                        text: "We are a collective of strategists, engineers, and operators working in unison to solve complex infrastructure challenges."
+                        title: "Our Operation",
+                        text: "We operate across commerce, technology, operations, and capital discipline. Each initiative is built with clear ownership, defined systems, and measurable outcomes."
                     }
                 ].map((item, index) => (
                     <motion.div

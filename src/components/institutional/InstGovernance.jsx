@@ -17,10 +17,13 @@ const InstGovernance = () => {
                     viewport={{ once: true }}
                     className="type-h1 mb-6 text-white"
                 >
-                    Radical <br/> Accountability.
+                    Governance & <br/> Accountability
                 </motion.h2>
                 <p className="type-body text-gray-400 max-w-sm">
-                    Trust is not given; it is earned through transparency and structure.
+                    Quraysh operates with a clear governance model separating strategy, execution, finance, and product ownership.
+                </p>
+                <p className="type-body text-gray-500 max-w-sm mt-4 text-sm">
+                    Each initiative has defined leadership, responsibilities, and performance tracking.
                 </p>
             </div>
 

@@ -13,6 +13,7 @@ const Button = ({
   
   const variants = {
     primary: "bg-[var(--bg-inverse)] text-[var(--text-inverse)] hover:opacity-90",
+    brand: "bg-[var(--color-brand)] text-white hover:bg-gray-800 hover:text-white", 
     secondary: "bg-[var(--bg-core)] text-[var(--text-primary)] border border-[var(--border-medium)] hover:bg-[var(--bg-subtle)] hover:border-[var(--text-primary)]",
     ghost: "bg-transparent text-[var(--text-primary)] hover:bg-[var(--bg-subtle)]"
   };

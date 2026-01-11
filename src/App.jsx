@@ -1,11 +1,11 @@
 import React from 'react';
 import InstNavbar from './components/institutional/InstNavbar';
-import Preloader from './components/institutional/Preloader';
+
 import CustomCursor from './components/institutional/CustomCursor';
 import FilmGrain from './components/institutional/FilmGrain';
 import Lenis from 'lenis';
 import { useEffect } from 'react';
-// import DSPreview from './components/DSPreview'; 
+ 
 
 import InstHero from './components/institutional/InstHero';
 import InstAbout from './components/institutional/InstAbout';
@@ -42,11 +42,9 @@ function App() {
 
   return (
     <div className="bg-[var(--bg-core)] min-h-screen selection:bg-black selection:text-white md:cursor-normal text-[var(--text-primary)]">
-      {/* 
-       <DSPreview />
-       */}
+
        
-      <Preloader />
+
       <CustomCursor />
       <FilmGrain />
       <InstNavbar />

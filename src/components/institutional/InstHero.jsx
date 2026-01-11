@@ -25,9 +25,9 @@ const InstHero = () => {
                     transition={{ duration: 0.8, delay: 0.1 }}
                     className="type-display text-[var(--text-primary)] mb-8 leading-[0.95]"
                 >
-                    Building the <br/>
-                    <span className="text-[var(--text-tertiary)]">Institutions</span> of <br/>
-                    Tomorrow.
+                    Building Structured <br/>
+                    Businesses for <br/>
+                    <span className="text-[var(--text-tertiary)]">Long-Term Scale.</span>
                 </motion.h1>
 
                 <motion.p 
@@ -36,7 +36,7 @@ const InstHero = () => {
                     transition={{ duration: 0.8, delay: 0.3 }}
                     className="type-body text-[var(--text-secondary)] text-xl mb-12 max-w-xl"
                 >
-                    Quraysh is a strategic holding company. We structure, connect, and elevate specialized businesses through disciplined leadership and execution.
+                    Quraysh is a strategic holding company focused on commerce, systems, and execution-led growth.
                 </motion.p>
 
                 <motion.div 
@@ -45,11 +45,8 @@ const InstHero = () => {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="flex flex-wrap gap-4"
                 >
-                     <Button variant="primary" size="lg">
-                        Start Partnership
-                     </Button>
-                     <Button variant="secondary" size="lg" icon={false}>
-                        Explore Divisions
+                     <Button variant="brand" size="lg">
+                        Explore Our Structure
                      </Button>
                 </motion.div>
             </div>

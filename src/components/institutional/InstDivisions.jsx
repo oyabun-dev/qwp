@@ -7,25 +7,32 @@ import Button from '../ui/Button';
 
 const divisions = [
     {
-        name: "Quraysh Capital",
-        role: "Investment Arm",
-        desc: "Allocating capital to high-yield infrastructure and technology assets.",
+        name: "Quraysh Commerce",
+        role: "Goods & Trade",
+        desc: "Product-based businesses, sourcing, e-commerce, and supply chain execution.",
         bg: "bg-black text-white",
         variant: "black"
     },
     {
-        name: "Quraysh Properties",
-        role: "Real Estate Development",
-        desc: "Developing next-generation commercial and residential spaces.",
+        name: "Quraysh Operations",
+        role: "Logistics & Fulfillment",
+        desc: "Logistics, fulfillment, content production, and field execution.",
         bg: "bg-white text-black",
         variant: "white"
     },
     {
-        name: "Quraysh Logistics",
-        role: "Supply Chain",
-        desc: "Optimizing flow across regional and international trade routes.",
+        name: "Quraysh Communication",
+        role: "Growth & Brand",
+        desc: "Brand strategy, growth systems, content, and distribution.",
         bg: "bg-gray-100 text-black",
         variant: "white"
+    },
+    {
+        name: "Quraysh Technology",
+        role: "Digital Infrastructure",
+        desc: "Platforms, internal systems, automation, and digital infrastructure.",
+        bg: "bg-black text-white",
+        variant: "black"
     }
 ];
 

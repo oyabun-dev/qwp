@@ -7,11 +7,15 @@
   /* Modern Growth Palette - Strict Monochrome */
   --bg-core: #FFFFFF;        /* Pure White */
   --bg-subtle: #F5F5F7;      /* Light Gray for sections/cards */
-  --bg-inverse: #050505;     /* Deep Black for primary actions/heros */
+  --bg-inverse: #050505;     /* Deep Black */
   --bg-glass: rgba(255, 255, 255, 0.7);
 
+  /* Brand Colors */
+  --color-gold: #C6A87C; /* Kept for legacy reference if needed */
+  --color-brand: #050505; /* Brand is now Deep Black */
+
   --text-primary: #050505;   /* Deep Black */
-  --text-secondary: #52525b; /* Zinc 600 - Readable Gray */
+  --text-secondary: #52525b; /* Zinc 600 */
   --text-tertiary: #a1a1aa;  /* Zinc 400 - Subtle */
   --text-inverse: #FFFFFF;   /* White text on black */
 

@@ -43,10 +43,19 @@ const InstNavbar = () => {
          <div className="w-full max-w-[1440px] mx-auto px-6 md:px-10 flex justify-between items-center">
              {/* Logo */}
              <div className="flex items-center gap-2 cursor-pointer">
-                <span className="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white font-bold text-lg">Q</span>
-                <span className="font-bold text-2xl tracking-tight text-[var(--text-primary)] font-sans">
-                    Quraysh
-                </span>
+                {/* Replace src with your actual logo path if different */}
+                <img 
+                    src="/assets/logo.jpg" 
+                    alt="Quraysh Logo" 
+                    className="h-10 w-auto object-contain" 
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                    }}
+                />
+                {/* Fallback if logo invalid */}
+                <span className="hidden w-8 h-8 bg-black rounded-lg items-center justify-center text-white font-bold text-lg">Q</span>
              </div>
 
              {/* Center Links - Desktop */}
@@ -64,7 +73,7 @@ const InstNavbar = () => {
 
              {/* Right Action */}
              <div className="flex items-center gap-4">
-                <Button variant="primary" size="sm" icon={false} className="hidden md:inline-flex">
+                <Button variant="brand" size="sm" icon={false} className="hidden md:inline-flex shadow-lg shadow-yellow-900/10">
                     Contact
                 </Button>
                 

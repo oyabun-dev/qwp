@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 
 const InstApproach = () => {
     const steps = [
-        { num: '01', title: 'Identify', desc: 'Isolate high-fragmentation markets with latent demand.' },
-        { num: '02', title: 'Structure', desc: 'Deploy disciplined operational frameworks and leadership.' },
-        { num: '03', title: 'Scale', desc: 'Leverage technology to expand reach and efficiency.' },
+        { num: '01', title: 'Identify', desc: 'We identify markets with asymmetric opportunity and operational inefficiencies.' },
+        { num: '02', title: 'Structure', desc: 'We design teams, systems, pricing, and execution frameworks before capital is deployed.' },
+        { num: '03', title: 'Scale', desc: 'We scale only what proves discipline, margins, and repeatability.' },
     ];
 
   return (

@@ -9,6 +9,7 @@ const Badge = ({ children, className = '' }) => {
       rounded-full 
       border border-[var(--border-medium)]
       bg-[var(--bg-subtle)] text-[var(--text-secondary)]
+      ${className.includes('brand') ? 'border-[var(--color-brand)] text-[var(--color-brand)]' : ''}
       ${className}
     `}>
       {children}
