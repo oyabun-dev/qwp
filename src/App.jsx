@@ -1,31 +1,30 @@
-import React from 'react';
-import InstNavbar from './components/institutional/InstNavbar';
-
-import CustomCursor from './components/institutional/CustomCursor';
-import FilmGrain from './components/institutional/FilmGrain';
+import React, { useEffect } from 'react';
+import './index.css';
 import Lenis from 'lenis';
-import { useEffect } from 'react';
- 
-
 import InstHero from './components/institutional/InstHero';
-import InstAbout from './components/institutional/InstAbout';
-import InstApproach from './components/institutional/InstApproach';
-import InstDivisions from './components/institutional/InstDivisions';
-import InstPortfolio from './components/institutional/InstPortfolio';
-import InstGovernance from './components/institutional/InstGovernance';
+import InstQuote from './components/institutional/InstQuote';
+import InstManifesto from './components/institutional/InstManifesto';
+import InstDiscipline from './components/institutional/InstDiscipline';
+import InstImpact from './components/institutional/InstImpact';
+import InstOffers from './components/institutional/InstOffers';
+import InstTeam from './components/institutional/InstTeam';
+import InstPartners from './components/institutional/InstPartners';
+import InstCareers from './components/institutional/InstCareers';
 import InstFooter from './components/institutional/InstFooter';
+
+import InstHeader from './components/institutional/InstHeader';
 
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        mouseMultiplier: 1,
-        smoothTouch: false,
-        touchMultiplier: 2,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
     });
 
     function raf(time) {
@@ -36,25 +35,22 @@ function App() {
     requestAnimationFrame(raf);
 
     return () => {
-        lenis.destroy();
-    }
+      lenis.destroy();
+    };
   }, []);
 
   return (
-    <div className="bg-[var(--bg-core)] min-h-screen selection:bg-black selection:text-white md:cursor-normal text-[var(--text-primary)]">
-
-       
-
-      <CustomCursor />
-      <FilmGrain />
-      <InstNavbar />
-
+    <div className="w-full min-h-screen bg-white">
+      <InstHeader />
       <InstHero />
-      <InstAbout />
-      <InstApproach />
-      <InstDivisions />
-      <InstPortfolio />
-      <InstGovernance />
+      <InstQuote />
+      <InstManifesto />
+      <InstDiscipline />
+      <InstImpact />
+      <InstOffers />
+      <InstTeam />
+      <InstPartners />
+      <InstCareers />
       <InstFooter />
     </div>
   );

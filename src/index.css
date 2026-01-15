@@ -1,126 +1,43 @@
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import "tailwindcss";
-
-:root {
-  /* Modern Growth Palette - Strict Monochrome */
-  --bg-core: #FFFFFF;        /* Pure White */
-  --bg-subtle: #F5F5F7;      /* Light Gray for sections/cards */
-  --bg-inverse: #050505;     /* Deep Black */
-  --bg-glass: rgba(255, 255, 255, 0.7);
-
-  /* Brand Colors */
-  --color-gold: #8C7A5B;
-  --color-brand: var(--color-gold);
-
-  --text-primary: #050505;   /* Deep Black */
-  --text-secondary: #52525b; /* Zinc 600 */
-  --text-tertiary: #a1a1aa;  /* Zinc 400 - Subtle */
-  --text-inverse: #FFFFFF;   /* White text on black */
-
-  --border-light: #F4F4F5;   /* Zinc 100 - Very subtle */
-  --border-medium: #E4E4E7;  /* Zinc 200 - Card borders */
-  --border-dark: #27272a;    /* Zinc 800 - Dark borders */
-
-  /* Typography Scale */
-  --font-sans: 'Outfit', sans-serif;
+@layer base {
+  body {
+    @apply bg-white text-black;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
   
-  /* Spacing Rhythm */
-  --space-section: 160px;
-  --space-block: 60px;
-  
-  /* Radius */
-  --radius-card: 2rem;       /* 32px */
-  --radius-pill: 9999px;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", serif;
+  }
 }
 
-body {
-  background-color: var(--bg-core);
-  color: var(--text-primary);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-}
-
-/* Typography Utilities */
 .type-display {
-  font-family: var(--font-sans); /* Switched to Sans for the modern "Ubiqui" look */
-  font-weight: 600;
-  font-size: clamp(3.5rem, 6vw, 6rem);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-}
-
-.type-h1 {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  font-family: "Playfair Display", serif;
+  @apply font-bold text-5xl md:text-8xl leading-none tracking-tight;
 }
 
 .type-h2 {
-  font-family: var(--font-sans);
-  font-size: 2rem;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  font-family: "Playfair Display", serif;
+  @apply font-bold text-4xl md:text-6xl leading-tight tracking-tight;
+}
+
+.type-h3 {
+  font-family: "Playfair Display", serif;
+  @apply font-bold text-2xl md:text-3xl leading-tight;
 }
 
 .type-body {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 60ch;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  @apply font-normal text-base md:text-lg leading-relaxed;
 }
 
 .type-label {
-  font-family: var(--font-sans);
-  font-size: 0.75rem; 
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 500;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  @apply font-bold text-xs md:text-sm uppercase tracking-widest;
 }
 
-/* UI Utilities */
-.btn-pill {
-  border-radius: 9999px;
-  padding: 0.75rem 2rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.btn-pill-primary {
-  background-color: var(--text-primary);
-  color: white;
-}
-
-.btn-pill-primary:hover {
-  background-color: #333;
-}
-
-.btn-pill-outline {
-  background-color: transparent;
-  border: 1px solid var(--border-medium);
-  color: var(--text-primary);
-}
-
-.btn-pill-outline:hover {
-  border-color: var(--text-primary);
-  background-color: var(--bg-core);
-}
-
-/* Layout Utilities */
-.container-wide {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.section-pad {
-  padding-top: var(--space-section);
-  padding-bottom: var(--space-section);
+.section-standard {
+  @apply py-24 md:py-32;
 }

@@ -1,40 +1,20 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 
-const Button = ({ 
-  children, 
-  variant = 'primary', 
-  size = 'md', 
-  className = '', 
-  icon = true,
-  onClick 
-}) => {
-  const baseStyles = "inline-flex items-center gap-2 rounded-full font-medium transition-all duration-300 cursor-pointer active:scale-95";
+const Button = ({ children, variant = 'primary', className = '', ...props }) => {
+  const baseStyles = "inline-flex items-center justify-center px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-lg";
   
   const variants = {
-    primary: "bg-[var(--bg-inverse)] text-[var(--text-inverse)] border border-transparent hover:bg-transparent hover:text-[var(--text-primary)] hover:border-[var(--text-primary)]",
-    brand: "bg-[var(--color-brand)] text-white border border-transparent hover:brightness-90", 
-    secondary: "bg-transparent text-[var(--text-primary)] border border-[var(--border-medium)] hover:border-[var(--color-brand)] hover:text-[var(--color-brand)]",
-    ghost: "bg-transparent text-[var(--text-primary)] hover:bg-[var(--bg-subtle)]"
-  };
-
-  const sizes = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-base",
-    lg: "px-8 py-4 text-lg"
+    primary: "bg-white text-black hover:bg-gray-100",
+    brand: "bg-[#DFB275] text-white hover:bg-[#cfa56d]",
+    outline: "border border-white/20 text-white hover:bg-white/10"
   };
 
   return (
     <button 
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
-      onClick={onClick}
+      className={`${baseStyles} ${variants[variant] || variants.primary} ${className}`}
+      {...props}
     >
       {children}
-      {icon && variant !== 'ghost' && (
-        <span className="bg-white/20 rounded-full p-1 ml-1 group-hover:bg-white/30 transition-colors">
-            <ArrowRight size={16} strokeWidth={2.5} />
-        </span>
-      )}
     </button>
   );
 };

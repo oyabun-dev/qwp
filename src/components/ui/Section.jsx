@@ -1,22 +1,9 @@
 import React from 'react';
 
-const Section = ({ 
-  children, 
-  className = '', 
-  id = '',
-  width = 'wide' // 'wide' | 'narrow' | 'full'
-}) => {
-  const maxWidths = {
-    wide: "max-w-[1440px]",
-    narrow: "max-w-[1024px]",
-    full: "max-w-full"
-  };
-
+const Section = ({ children, className = '', id = '' }) => {
   return (
-    <section id={id} className={`py-[var(--space-section)] ${className}`}>
-      <div className={`${maxWidths[width]} mx-auto px-6 md:px-16`}>
-        {children}
-      </div>
+    <section id={id} className={`w-full py-20 px-6 md:px-12 lg:px-24 mx-auto max-w-screen-2xl ${className}`}>
+      {children}
     </section>
   );
 };

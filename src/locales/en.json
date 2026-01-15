@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "vision": "Vision",
+    "approach": "Approach",
+    "divisions": "Divisions",
+    "portfolio": "Portfolio",
+    "governance": "Governance",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Quraysh Holding",
+    "title": "Excellence through <1>Execution.</1>",
+    "subtitle": "QURAYSH is an independent operational holding. We build sustainable ecosystems by merging Capital, Technology, and Commerce.",
+    "cta": "Discover our projects"
+  },
+  "quote": {
+    "text": "Ambition without execution is hallucination."
+  },
+  "discipline": {
+    "title": "Discipline meets Scale.",
+    "subtitle": "A proven method to build champions.",
+    "cards": [
+      { "title": "Structure", "desc": "Solid foundations to support hyper-growth." },
+      { "title": "Frequency", "desc": "A sustained and predictable execution rhythm." },
+      { "title": "Focus", "desc": "Maniacal obsession with added value." }
+    ]
+  },
+  "impact": {
+    "label": "Divisions",
+    "title": "Structuring for Impact.",
+    "subtitle": "Our activity divisions.",
+    "divisions": [
+      { "name": "Quraysh Capital", "desc": "Strategic resource allocation." },
+      { "name": "Quraysh Tech", "desc": "Software architecture and digital innovation." },
+      { "name": "Quraysh Commerce", "desc": "Product development and market access." },
+      { "name": "Quraysh Growth", "desc": "Acquisition and growth strategies." },
+      { "name": "Quraysh Operations", "desc": "Logistical excellence and processes." }
+    ]
+  },
+  "offers": {
+    "label": "Portfolio",
+    "title": "Projects & Achievements.",
+    "feat_title": "Ramadan Initiative",
+    "feat_desc": "A DNVB brand dedicated to the Ramadan experience. Design and distribution of premium gift sets and fine fragrances.",
+    "list": [
+      { "title": "Tech Solutions", "desc": "SaaS platforms and proprietary mobile apps (e.g., ShredLab)." },
+      { "title": "DNVB Brands", "desc": "Digital Native Vertical Brands." },
+      { "title": "Investment", "desc": "Strategic equity stakes." }
+    ]
+  },
+  "footer": {
+    "brand": "QURAYSH",
+    "rights": "© 2024 QURAYSH. ALL RIGHTS RESERVED.",
+    "columns": {
+      "governance": {
+        "title": "Governance & Responsibility",
+        "links": ["Transparency", "Audit", "Compliance"]
+      },
+      "sitemap": {
+        "title": "Sitemap",
+        "links": ["Vision", "Approach", "Divisions", "Contact"]
+      },
+      "social": {
+        "title": "Social",
+        "links": ["LinkedIn", "Twitter", "Legal"]
+      }
+    }
+  }
+}

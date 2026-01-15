@@ -1,44 +1,56 @@
 import React from 'react';
-import Section from '../ui/Section';
+import { useTranslation } from 'react-i18next';
 
 const InstFooter = () => {
-    const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
-    <footer className="bg-[var(--bg-inverse)] text-[var(--text-inverse)] border-t border-white/10">
-        <Section className="py-20">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
-                {/* Brand */}
-                <div>
-                    <div className="flex items-center gap-3 mb-4">
-                        <img 
-                            src="/assets/logo.png" 
-                            alt="Quraysh Logo" 
-                            className="h-12 w-auto object-contain brightness-0 invert" 
-                        />
-                        <span className="font-bold text-xl tracking-tight text-white font-sans">
-                            Quraysh Holding
-                        </span>
+    <footer className="bg-black text-white py-20 border-t border-[#DFB275]/20">
+        <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+                <div className="col-span-1 md:col-span-1">
+                    <img src="/assets/quraysh-logo-gold.png" alt="Quraysh Logo" className="h-12 w-auto mb-8 object-contain brightness-0 invert" />
+                    <h3 className="text-xl font-bold tracking-tight mb-8">
+                        {t('footer.columns.governance.title')}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+                        L'intégrité est notre seule devise. Nous opérons selon les standards les plus stricts de l'industrie.
+                    </p>
+                </div>
+
+                <div className="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+                    {/* Dynamic Footer Links */}
+                    <div>
+                        <h4 className="type-label mb-6 text-[#DFB275] border-none">Corporate</h4>
+                        <ul className="space-y-4 text-sm text-gray-400 font-body">
+                            <li><a href="#" className="hover:text-white transition-colors">Vision</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Manifesto</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Team</a></li>
+                        </ul>
                     </div>
-                    <span className="text-sm text-gray-500">Dakar — Global Operations</span>
-                </div>
-
-                {/* Contact */}
-                <div>
-                   <a href="mailto:contact@quraysh.co" className="text-gray-400 hover:text-white transition-colors">
-                        contact@quraysh.co
-                   </a>
+                    <div>
+                         <h4 className="type-label mb-6 text-[#DFB275] border-none">Divisions</h4>
+                         <ul className="space-y-4 text-sm text-gray-400 font-body">
+                            <li><a href="#" className="hover:text-white transition-colors">Quraysh Commerce</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Quraysh Capital</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Quraysh Tech</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="type-label mb-6 text-[#DFB275] border-none">Social</h4>
+                        <ul className="space-y-4 text-sm text-gray-400 font-body">
+                            <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Twitter</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
-                <p>&copy; {currentYear} Quraysh Strategic Holdings.</p>
-                <div className="flex gap-6 mt-4 md:mt-0">
-                    <span>Privacy</span>
-                    <span>Terms</span>
-                </div>
+            <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 opacity-60 text-xs tracking-widest uppercase">
+                <p>{t('footer.brand')}</p>
+                <p>{t('footer.rights')}</p>
             </div>
-        </Section>
+        </div>
     </footer>
   );
 };

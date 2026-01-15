@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "vision": "Vision",
+    "approach": "Approche",
+    "divisions": "Pôles",
+    "portfolio": "Portfolio",
+    "governance": "Gouvernance",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Quraysh Holding",
+    "title": "L'Excellence par <1>l'Exécution.</1>",
+    "subtitle": "QURAYSH est une holding opérationnelle indépendante. Nous bâtissons des écosystèmes durables en fusionnant Capital, Technologie et Commerce.",
+    "cta": "Découvrir nos projets"
+  },
+  "quote": {
+    "text": "L'innovation n'est pas une option, c'est notre standard."
+  },
+  "discipline": {
+    "label": "Notre Approche",
+    "title": "Une rigueur sans faille.",
+    "subtitle": "Nous appliquons des standards institutionnels à l'agilité startup.",
+    "cards": [
+      { "title": "Stratégie", "desc": "Vision long terme et allocation précise." },
+      { "title": "Exécution", "desc": "Déploiement rapide et itération continue." },
+      { "title": "Mesure", "desc": "Analyse de données et optimisation constante." }
+    ]
+  },
+  "impact": {
+    "label": "Notre Modèle",
+    "title": "Notre Framework Opérationnel.",
+    "subtitle": "Nous opérons nos propres ventures à travers cinq piliers fondamentaux.",
+    "divisions": [
+      { "name": "Quraysh Capital", "desc": "Allocation stratégique des ressources." },
+      { "name": "Quraysh Tech", "desc": "Architecture logicielle et innovation digitale." },
+      { "name": "Quraysh Commerce", "desc": "Développement de produits et accès au marché." },
+      { "name": "Quraysh Growth", "desc": "Stratégies d'acquisition et de croissance." },
+      { "name": "Quraysh Operations", "desc": "Excellence logistique et processus." }
+    ]
+  },
+  "offers": {
+    "label": "Portfolio",
+    "title": "Projets & Réalisations.",
+    "feat_title": "Initiative Ramadan",
+    "feat_desc": "Une marque DNVB dédiée à l'expérience du Ramadan. Conception et distribution de coffrets premium et de parfumerie fine.",
+    "list": [
+      { "title": "Solutions Tech", "desc": "Plateformes SaaS et apps mobiles propriétaires (ex: ShredLab)." },
+      { "title": "DNVB Brands", "desc": "Marques verticales natives digitales." },
+      { "title": "Investissement", "desc": "Prises de participation stratégiques." }
+    ]
+  },
+  "footer": {
+    "brand": "QURAYSH",
+    "rights": "© 2024 QURAYSH. TOUS DROITS RÉSERVÉS.",
+    "columns": {
+      "governance": {
+        "title": "Gouvernance & Responsabilité",
+        "links": ["Transparence", "Audit", "Conformité"]
+      },
+      "sitemap": {
+        "title": "Plan du site",
+        "links": ["Vision", "Approche", "Pôles", "Contact"]
+      },
+      "social": {
+        "title": "Réseaux",
+        "links": ["LinkedIn", "Twitter", "Legal"]
+      }
+    }
+  }
+}
