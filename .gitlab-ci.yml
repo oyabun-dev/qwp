@@ -1,0 +1,31 @@
+stages:
+  - tests
+code_quality:
+  image: node:20-alpine
+  stage: tests
+  before_script:
+    - npm ci
+  script:
+    - npm run lint:html
+  artifacts:
+    paths:
+      - ./
+
+smoke_test:
+  image: node:20-alpine
+  stage: tests
+  before_script:
+    - npm ci
+  script:
+    - npm run smoke:ci
+
+unit_test:
+  image: node:20-alpine
+  stage: tests
+  before_script:
+    - npm ci
+  script:
+    - npm run test:ci
+  artifacts:
+    paths:
+      - coverage/
