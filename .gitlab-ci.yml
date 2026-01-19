@@ -22,6 +22,8 @@ smoke_test:
 unit_test:
   image: node:20-alpine
   stage: tests
+  needs:
+    - smoke_test
   before_script:
     - npm ci
   script:
