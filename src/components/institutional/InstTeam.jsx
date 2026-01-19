@@ -1,50 +1,100 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import Section from '../ui/Section';
+import { ArrowUpRight } from 'lucide-react';
 
 const InstTeam = () => {
     const { t } = useTranslation();
+    const team = t('team.people', { returnObjects: true }) || [];
 
-    const team = [
-        { name: "Kana", role: "Chief Executive Officer (CEO)", desc: "Vision stratégique et direction globale." },
-        { name: "Khalifa", role: "Chief Technology Officer (CTO)", desc: "Innovation technique et ingénierie." },
-        { name: "BMG", role: "Chief Product Officer (CPO)", desc: "Design produit et expérience client." },
-        { name: "Synki", role: "Chief Financial Officer (CFO)", desc: "Structure financière et performance." }
-    ];
+    const containerVars = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVars = {
+        hidden: { opacity: 0, y: 10 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
+    };
 
     return (
-        <section className="section-standard bg-white text-black">
-            <div className="max-w-screen-2xl mx-auto w-full px-6 md:px-12 lg:px-24">
-                <div className="mb-16">
-                    <p className="type-label text-[#C5A059] mb-4">L'Équipe</p>
-                    <h2 className="type-h2">Les Architectes.</h2>
+        <Section id="team" className="bg-white text-black min-h-screen pt-32 pb-24">
+            {/* Editorial Header */}
+            <div className="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-black pb-8">
+                <div>
+                    <span className="type-label text-[#C5A059] mb-4 block">{t('team.label')}</span>
+                    <h1 className="type-display text-7xl md:text-9xl leading-[0.85] tracking-tight">
+                        {t('team.title')}
+                    </h1>
                 </div>
+                <p className="type-body text-gray-500 max-w-sm text-right mt-8 md:mt-0 font-light">
+                    {t('manifesto.values.2.desc')}
+                </p>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {team.map((member, i) => (
-                        <motion.div 
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: i * 0.1 }}
-                            viewport={{ once: true }}
-                            className="group"
-                        >
-                            <div className="aspect-[3/4] bg-gray-100 rounded-lg mb-6 overflow-hidden relative">
-                                {/* Placeholder Gradient - Replace with Image */}
-                                <div className="absolute inset-0 bg-gradient-to-tr from-gray-200 to-gray-50 group-hover:scale-105 transition-transform duration-700" />
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-300 text-9xl font-serif opacity-20">
-                                    {member.name[0]}
+            {/* Premium List Layout */}
+            <motion.div 
+                variants={containerVars}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex flex-col"
+            >
+                {team.map((member, i) => (
+                    <motion.div 
+                        key={i}
+                        variants={itemVars}
+                        className="group relative border-b border-gray-100 hover:border-[#C5A059] transition-colors duration-500"
+                    >
+                        <div className="grid grid-cols-1 md:grid-cols-12 items-center py-8 md:py-10 px-2 gap-4 md:gap-0">
+                            
+                            {/* 1. Name & Avatar */}
+                            <div className="md:col-span-4 flex items-center gap-6">
+                                <span className="font-mono text-xs text-gray-300 w-6">0{i + 1}</span>
+                                <div className="relative">
+                                     {/* Small Minimalist Avatar */}
+                                    <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-sm font-heading group-hover:bg-[#C5A059] group-hover:text-white transition-colors duration-300">
+                                        {member.name.substring(0, 2).toUpperCase()}
+                                    </div>
+                                </div>
+                                <h3 className="font-heading text-3xl md:text-4xl font-medium group-hover:translate-x-2 transition-transform duration-500">
+                                    {member.name}
+                                </h3>
+                            </div>
+
+                            {/* 2. Role */}
+                            <div className="md:col-span-3 pl-12 md:pl-0 flex flex-wrap gap-2">
+                                {(Array.isArray(member.role) ? member.role : [member.role]).map((role, idx) => (
+                                    <span key={idx} className="font-mono text-xs uppercase tracking-widest text-[#C5A059] border border-[#C5A059]/20 px-3 py-1 rounded-full group-hover:bg-[#C5A059] group-hover:text-white transition-all duration-300">
+                                        {role}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {/* 3. Description */}
+                            <div className="md:col-span-4 pl-12 md:pl-0">
+                                <p className="text-gray-400 group-hover:text-gray-600 transition-colors duration-300 font-light leading-relaxed max-w-md">
+                                    {member.desc}
+                                </p>
+                            </div>
+
+                            {/* 4. Action */}
+                            <div className="md:col-span-1 flex justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-black transition-colors">
+                                    <ArrowUpRight className="w-5 h-5" />
                                 </div>
                             </div>
-                            <h3 className="type-h3 mb-1">{member.name}</h3>
-                            <p className="type-label text-[#C5A059] mb-3">{member.role}</p>
-                            <p className="type-body text-gray-500 text-sm">{member.desc}</p>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </section>
+                        </div>
+                    </motion.div>
+                ))}
+            </motion.div>
+        </Section>
     );
 };
 

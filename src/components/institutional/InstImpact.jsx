@@ -3,6 +3,7 @@ import Section from '../ui/Section';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const InstImpact = () => {
     const { t } = useTranslation();
@@ -12,28 +13,48 @@ const InstImpact = () => {
     });
 
     // Transform vertical scroll to horizontal movement
-    // Calculating rough width: 5 cards * 42vw + gaps ~ 230vw. 
-    // We need to move enough to show the last card. 
-    // Moving 150vw to the left should be safe.
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-150%"]);
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
 
     const divisions = t('impact.divisions', { returnObjects: true }) || [];
 
     return (
-        <section ref={targetRef} className="relative h-[500vh] bg-white section-standard text-black border-t border-gray-100">
+        <section id="divisions" ref={targetRef} className="relative h-[500vh] bg-white section-standard text-black border-t border-gray-100">
             <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
                 <div className="max-w-screen-2xl mx-auto w-full px-6 md:px-12 lg:px-24 mb-12">
-                    <p className="type-label text-[#C5A059] mb-4">{t('impact.label')}</p>
-                    <h2 className="type-h2 max-w-2xl">
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="type-label text-[#C5A059] mb-4"
+                    >
+                        {t('impact.label')}
+                    </motion.p>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="type-h2 max-w-2xl"
+                    >
                         {t('impact.title')}
-                    </h2>
-                    <p className="type-body text-gray-500 mt-4">{t('impact.subtitle')}</p>
+                    </motion.h2>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        className="type-body text-gray-500 mt-4"
+                    >
+                        {t('impact.subtitle')}
+                    </motion.p>
                 </div>
 
                 <div className="relative w-full">
-                    <motion.div style={{ x }} className="flex gap-6 md:gap-10 pl-6 md:pl-24">
+                    <motion.div style={{ x }} className="flex gap-6 md:gap-10 pl-6 md:pl-24 w-max">
                         {divisions.map((div, i) => (
-                            <div 
+                            <Link 
+                                to={`/divisions/${div.slug}`}
                                 key={i}
                                 className={`
                                     flex-shrink-0 w-[85vw] md:w-[48vw] p-8 md:p-12 rounded-xl min-h-[400px] md:min-h-[450px] flex flex-col justify-between group cursor-pointer transition-all duration-300 relative overflow-hidden
@@ -56,7 +77,7 @@ const InstImpact = () => {
                                     <h3 className="type-h2 text-3xl mb-4 whitespace-nowrap">{div.name}</h3>
                                     <p className="type-body text-gray-400">{div.desc}</p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </motion.div>
                 </div>

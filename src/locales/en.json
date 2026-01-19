@@ -1,11 +1,23 @@
 {
   "nav": {
     "vision": "Vision",
+    "manifesto": "Manifesto",
     "approach": "Approach",
     "divisions": "Divisions",
     "portfolio": "Portfolio",
     "governance": "Governance",
+    "partners": "Partners",
+    "team": "Team",
     "contact": "Contact"
+  },
+  "manifesto": {
+    "label": "Our Ambition",
+    "title": "Building <1>the Future.</1>",
+    "values": [
+      { "title": "Heritage.", "desc": "We amplify tradition through technology." },
+      { "title": "Impact.", "desc": "We build the tangible, far from speculation." },
+      { "title": "Commitment.", "desc": "Excellence is not an option, it is a debt." }
+    ]
   },
   "hero": {
     "badge": "Quraysh Holding",
@@ -30,40 +42,132 @@
     "title": "Structuring for Impact.",
     "subtitle": "Our activity divisions.",
     "divisions": [
-      { "name": "Quraysh Capital", "desc": "Strategic resource allocation." },
-      { "name": "Quraysh Tech", "desc": "Software architecture and digital innovation." },
-      { "name": "Quraysh Commerce", "desc": "Product development and market access." },
-      { "name": "Quraysh Growth", "desc": "Acquisition and growth strategies." },
-      { "name": "Quraysh Operations", "desc": "Logistical excellence and processes." }
-    ]
+      { "name": "Quraysh Capital", "desc": "Strategic resource allocation.", "slug": "capital" },
+      { "name": "Quraysh Tech", "desc": "Software architecture and digital innovation.", "slug": "tech" },
+      { "name": "Quraysh Commerce", "desc": "Product development and market access.", "slug": "commerce" },
+      { "name": "Quraysh Growth", "desc": "Acquisition and growth strategies.", "slug": "growth" },
+      { "name": "Quraysh Operations", "desc": "Logistical excellence and processes.", "slug": "operations" }
+    ],
+    "division_details": {
+        "capital": {
+            "title": "Quraysh Capital",
+            "subtitle": "The Financial Engine.",
+            "content": "Quraysh Capital is the strategic investment arm of the group, tasked with efficient capital allocation across our ecosystem. We operate with a macro-thematic approach, identifying high-yield opportunities in emerging markets and digital assets.",
+            "stats": [
+                { "label": "AUM Deployment", "value": "$50M+" },
+                { "label": "Portfolio Co.", "value": "12" },
+                { "label": "ROI Target", "value": "24%" }
+            ],
+            "services": ["Private Equity", "Venture Capital", "Asset Management", "Financial Structuring"]
+        },
+        "tech": {
+            "title": "Quraysh Tech",
+            "subtitle": "Building Digital Sovereignty.",
+            "content": "Our technology division engineers the proprietary platforms that power our dominance. From advanced e-commerce infrastructures to AI-driven analytics, Quraysh Tech ensures our competitive advantage is absolute and scalable.",
+            "stats": [
+                { "label": "Lines of Code", "value": "2M+" },
+                { "label": "Platforms", "value": "5" },
+                { "label": "Uptime", "value": "99.9%" }
+            ],
+            "services": ["SaaS Development", "Cloud Architecture", "AI Integration", "Cybersecurity"]
+        },
+        "commerce": {
+            "title": "Quraysh Commerce",
+            "subtitle": "Redefining Retail.",
+            "content": "Quraysh Commerce incubates and scales Direct-to-Consumer (DTC) brands. We control the entire value chain, from product ideation to final delivery, ensuring distinct brand identity and superior customer experience.",
+            "stats": [
+                { "label": "Units Sold", "value": "150k+" },
+                { "label": "Active Brands", "value": "8" },
+                { "label": "Market Reach", "value": "4 Cont." }
+            ],
+            "services": ["Brand Incubation", "Product Design", "Supply Chain", "Global Distribution"]
+        },
+        "growth": {
+            "title": "Quraysh Growth",
+            "subtitle": "Aggressive Expansion.",
+            "content": "Growth is not accidental; it is engineered. Quraysh Growth utilizes data-driven marketing, neurological branding, and viral acquisition loops to rapidly scale our portfolio companies.",
+            "stats": [
+                { "label": "Ad Spend/Yr", "value": "$2M" },
+                { "label": "Acquisition Cost", "value": "-15%" },
+                { "label": "Reach", "value": "10M+" }
+            ],
+            "services": ["Performance Marketing", "Viral Loops", "Brand Strategy", "Data Analytics"]
+        },
+        "operations": {
+            "title": "Quraysh Operations",
+            "subtitle": "Execution Excellence.",
+            "content": "The backbone of our empire. Quraysh Operations manages the physical and logistical reality of our business, ensuring that our promises are delivered with military precision and efficiency.",
+            "stats": [
+                { "label": "Warehouses", "value": "3" },
+                { "label": "Delivery Speed", "value": "<24h" },
+                { "label": "Efficiency", "value": "98%" }
+            ],
+            "services": ["Logistics", "Inventory Mgmt", "Process Optimization", "Facility Mgmt"]
+        }
+    }
   },
   "offers": {
     "label": "Portfolio",
     "title": "Projects & Achievements.",
-    "feat_title": "Ramadan Initiative",
-    "feat_desc": "A DNVB brand dedicated to the Ramadan experience. Design and distribution of premium gift sets and fine fragrances.",
-    "list": [
-      { "title": "Tech Solutions", "desc": "SaaS platforms and proprietary mobile apps (e.g., ShredLab)." },
-      { "title": "DNVB Brands", "desc": "Digital Native Vertical Brands." },
-      { "title": "Investment", "desc": "Strategic equity stakes." }
+    "subtitle": "Explore our active investments.",
+    "featured": "FEATURED",
+    "items": [
+      { "id": 3, "title": "Ramadan Boxes", "subtitle": "Exclusive Box Sets (Commerce)", "featured": true },
+      { "id": 4, "title": "Valentine's Day", "subtitle": "Limited Editions (Commerce)", "featured": false },
+      { "id": 2, "title": "E-commerce", "subtitle": "Online Sales Platform (Commerce)", "featured": false },
+      { "id": 1, "title": "Agricultural Project", "subtitle": "Food Sovereignty (Capital)", "featured": false }
+    ]
+  },
+  "team": {
+    "label": "Leadership",
+    "title": "Architects.",
+    "people": [
+      { "name": "Kana", "role": "CEO", "desc": "Strategy & Vision" },
+      { "name": "Khalifa", "role": "CTO", "desc": "Tech & Engineering" },
+      { "name": "BMG", "role": "CPO", "desc": "Product & Experience" },
+      { "name": "Sinki", "role": "CFO", "desc": "Finance & Treasury" },
+      { "name": "Guillé", "role": "COO", "desc": "Systems & Excellence" },
+      { "name": "Dylane", "role": "Head of Capital", "desc": "Finance & Investment" },
+      { "name": "Issakha", "role": "Media", "desc": "Narrative & Reach" },
+      { "name": "Wilane", "role": "Head of Community", "desc": "Social Media & Influence" },
+      { "name": "Ndiaye", "role": ["Market & Regulatory", "Intelligence Lead"], "desc": "Foresight & Policy" }
+    ]
+  },
+  "partners": {
+    "label": "Ecosystem",
+    "title": "Strategic Network",
+     "categories": [
+        "Infrastructure Tech", "AWS", "Vercel", "Stripe", 
+        "Logistics & Supply", "DHL", "Maersk",
+        "Consulting & Legal", "Goldman Sachs", "McKinsey"
     ]
   },
   "footer": {
     "brand": "QURAYSH",
-    "rights": "© 2024 QURAYSH. ALL RIGHTS RESERVED.",
+    "rights": "© 2026 QURAYSH. ALL RIGHTS RESERVED.",
     "columns": {
       "governance": {
         "title": "Governance & Responsibility",
         "links": ["Transparency", "Audit", "Compliance"]
       },
-      "sitemap": {
-        "title": "Sitemap",
-        "links": ["Vision", "Approach", "Divisions", "Contact"]
+      "corporate": {
+        "title": "Corporate",
+        "links": ["Manifesto", "Divisions", "Portfolio", "Team", "Sitemap"]
+      },
+      "divisions": {
+        "title": "Divisions",
+        "links": ["Quraysh Capital", "Quraysh Tech", "Quraysh Commerce", "Quraysh Growth", "Quraysh Operations"]
       },
       "social": {
         "title": "Social",
         "links": ["LinkedIn", "Twitter", "Legal"]
       }
     }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Start a conversation.",
+    "email": "contact@quraysh.co",
+    "location": "Dakar, Senegal"
   }
 }

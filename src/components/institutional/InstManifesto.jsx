@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { ShieldCheck, Zap, Globe } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 
 const InstManifesto = () => {
     const { t } = useTranslation();
@@ -13,63 +12,41 @@ const InstManifesto = () => {
 
     const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
-    const items = [
-        {
-            icon: Globe,
-            title: "Héritage & Innovation",
-            desc: "Allier les valeurs traditionnelles de commerce éthique à la puissance de la technologie moderne."
-        },
-        {
-            icon: Zap,
-            title: "Impact Réel",
-            desc: "Créer de la valeur réelle, tangible et durable, loin de la spéculation."
-        },
-        {
-            icon: ShieldCheck,
-            title: "Engagement Total",
-            desc: "Une promesse de qualité intransigeante sur chaque produit et ligne de code que nous livrons."
-        }
-    ];
+    const values = t('manifesto.values', { returnObjects: true }) || [];
 
     return (
-        <section ref={targetRef} className="section-standard bg-black text-white relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat" />
-            
-            <div className="max-w-screen-2xl mx-auto w-full relative z-10 px-6 md:px-12 lg:px-24">
-                <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-start">
+        <section id="manifesto" className="py-24 md:py-32 bg-white text-black relative border-t border-gray-100">
+            <div className="max-w-screen-2xl mx-auto w-full px-6 md:px-12 lg:px-24">
+                <div className="flex flex-col lg:flex-row gap-24 items-start">
                     
-                    {/* Left: Title & Intro */}
-                    <div className="w-full md:w-1/3">
-                        <motion.div style={{ y }} className="sticky top-32">
-                            <p className="type-label text-[#C5A059] mb-4">Notre Ambition</p>
-                            <h2 className="type-h2">
-                                Construire <br/><span className="text-gray-500">l'Avenir.</span>
+                    {/* Sticky Title */}
+                    <div className="w-full lg:w-1/3">
+                        <motion.div style={{ y }} className="lg:sticky lg:top-32">
+                            <span className="type-label text-[#C5A059] mb-4 block">{t('manifesto.label')}</span>
+                            <h2 className="type-display text-5xl md:text-6xl lg:text-7xl leading-tight">
+                                <Trans i18nKey="manifesto.title" components={{ 
+                                    1: <span className="text-gray-400" /> 
+                                }} />
                             </h2>
-                            <p className="type-body text-gray-400 mt-8">
-                                QURAYSH ne cherche pas seulement à réussir, mais à durer. Notre vision s'étend sur des décennies, pas des trimestres.
-                            </p>
                         </motion.div>
                     </div>
 
-                    {/* Right: Key Points */}
-                    <div className="w-full md:w-2/3 grid grid-cols-1 gap-12">
-                        {items.map((item, i) => (
+                    {/* Values List */}
+                    <div className="w-full lg:w-2/3 flex flex-col gap-16 pt-8">
+                        {values.map((item, i) => (
                             <motion.div 
                                 key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: i * 0.1 }}
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.6, delay: i * 0.1 }}
                                 viewport={{ once: true }}
-                                className="group flex gap-6 items-start border-b border-white/10 pb-12 last:border-0"
+                                className="group"
                             >
-                                <div className="p-4 rounded-full bg-white/5 group-hover:bg-[#C5A059]/20 transition-colors duration-300">
-                                    <item.icon className="w-6 h-6 text-[#C5A059]" />
-                                </div>
-                                <div>
-                                    <h3 className="type-h3 mb-2 text-white group-hover:text-[#C5A059] transition-colors">{item.title}</h3>
-                                    <p className="type-body text-gray-400">{item.desc}</p>
-                                </div>
+                                <div className="h-[1px] w-full bg-gray-300 mb-8 group-hover:bg-[#C5A059] transition-colors duration-500" />
+                                <h3 className="text-4xl font-light mb-4">{item.title}</h3>
+                                <p className="type-body text-gray-500 text-xl max-w-lg">
+                                    {item.desc}
+                                </p>
                             </motion.div>
                         ))}
                     </div>

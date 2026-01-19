@@ -1,58 +1,94 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, createContext, useContext, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './index.css';
 import Lenis from 'lenis';
-import InstHero from './components/institutional/InstHero';
-import InstQuote from './components/institutional/InstQuote';
-import InstManifesto from './components/institutional/InstManifesto';
-import InstDiscipline from './components/institutional/InstDiscipline';
-import InstImpact from './components/institutional/InstImpact';
-import InstOffers from './components/institutional/InstOffers';
-import InstTeam from './components/institutional/InstTeam';
-import InstPartners from './components/institutional/InstPartners';
-import InstCareers from './components/institutional/InstCareers';
-import InstFooter from './components/institutional/InstFooter';
 
 import InstHeader from './components/institutional/InstHeader';
+import InstFooter from './components/institutional/InstFooter';
+
+import Home from './pages/Home';
+import Team from './pages/Team';
+import DivisionDetail from './pages/DivisionDetail';
+
+const LenisContext = createContext(null);
+
+export const useLenis = () => useContext(LenisContext);
+
+function ScrollToHashElement() {
+    const { hash, pathname } = useLocation();
+    const lenis = useLenis();
+
+    useEffect(() => {
+        if (lenis) {
+            // Handle hash scroll
+            if (hash) {
+                const element = document.getElementById(hash.replace('#', ''));
+                if (element) {
+                    lenis.scrollTo(element, { offset: 0 });
+                }
+            } else {
+                 // Handle normal page navigation - scroll to top immediately
+                 lenis.scrollTo(0, { immediate: true });
+            }
+        } else {
+            // Fallback if Lenis is not ready
+            if (!hash) window.scrollTo(0, 0);
+        }
+    }, [hash, pathname, lenis]);
+
+    return null;
+}
+
+function AppContent() {
+    const [lenis, setLenis] = useState(null);
+
+    useEffect(() => {
+        const newLenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        setLenis(newLenis);
+
+        function raf(time) {
+            newLenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        return () => {
+            newLenis.destroy();
+        };
+    }, []);
+
+    return (
+        <LenisContext.Provider value={lenis}>
+            <div className="w-full min-h-screen bg-white">
+                <InstHeader />
+                <ScrollToHashElement />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/team" element={<Team />} />
+                    <Route path="/divisions/:id" element={<DivisionDetail />} />
+                </Routes>
+                <InstFooter />
+            </div>
+        </LenisContext.Provider>
+    );
+}
 
 function App() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
   return (
-    <div className="w-full min-h-screen bg-white">
-      <InstHeader />
-      <InstHero />
-      <InstQuote />
-      <InstManifesto />
-      <InstDiscipline />
-      <InstImpact />
-      <InstOffers />
-      <InstTeam />
-      <InstPartners />
-      <InstCareers />
-      <InstFooter />
-    </div>
+    <Router>
+        <AppContent />
+    </Router>
   );
 }
 
