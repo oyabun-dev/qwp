@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>9/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>9/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -152,7 +152,21 @@
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -170,8 +184,10 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -214,7 +230,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -258,12 +286,13 @@ const InstImpact = () =&gt; {
     // Transform vertical scroll to horizontal movement
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
 &nbsp;
-    const divisions = t('impact.divisions', { returnObjects: true }) || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+    const rawDivisions = t('impact.divisions', { returnObjects: true });
+    const divisions = Array.isArray(rawDivisions) ? rawDivisions : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
 &nbsp;
     return (
-        &lt;section id="divisions" ref={targetRef} className="relative h-[500vh] bg-white section-standard text-black border-t border-gray-100"&gt;
-            &lt;div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden"&gt;
-                &lt;div className="max-w-screen-2xl mx-auto w-full px-6 md:px-12 lg:px-24 mb-12"&gt;
+        &lt;section id="divisions" ref={targetRef} className="relative lg:h-[500vh] bg-white section-standard text-black border-t border-gray-100 pb-24 lg:pb-0"&gt;
+            &lt;div className="lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center overflow-hidden"&gt;
+                &lt;div className="max-w-screen-2xl mx-auto w-full px-6 md:px-12 lg:px-24 mb-12 relative z-20"&gt;
                     &lt;motion.p 
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -294,40 +323,53 @@ const InstImpact = () =&gt; {
                 &lt;/div&gt;
 &nbsp;
                 &lt;div className="relative w-full"&gt;
-                    &lt;motion.div style={{ x }} className="flex gap-6 md:gap-10 pl-6 md:pl-24 w-max"&gt;
+                    {/* Desktop: Framer Motion Transform */}
+                    &lt;motion.div style={{ x }} className="hidden lg:flex gap-10 pl-24 w-max"&gt;
                         {divisions.map(<span class="fstat-no" title="function not covered" >(d</span>iv, i) =&gt; (
-<span class="cstat-no" title="statement not covered" >                            &lt;Link </span>
-                                to={`/divisions/${div.slug}`}
-                                key={i}
-                                className={`
-                                    flex-shrink-0 w-[85vw] md:w-[48vw] p-8 md:p-12 rounded-xl min-h-[400px] md:min-h-[450px] flex flex-col justify-between group cursor-pointer transition-all duration-300 relative overflow-hidden
-                                    bg-black text-white shadow-2xl shadow-black/50 
-                                    border border-white/10 hover:border-[#C5A059]
-                                    hover:-translate-y-2 hover:z-10
-                                `}
-                            &gt;
-                                {/* Dynamic Inner Glow Blob - Top Right Origin */}
-                                &lt;div className="absolute -top-20 -right-20 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(197,160,89,0.25)_0%,transparent_70%)] blur-[80px] opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-150 transition-all duration-700 ease-out pointer-events-none" /&gt;
-&nbsp;
-                                &lt;div className="flex justify-between items-start relative z-10"&gt;
-                                    &lt;span className="type-label text-[#C5A059]"&gt;
-                                        Division 0{i+1}
-                                    &lt;/span&gt;
-                                    &lt;ArrowUpRight className="w-8 h-8 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 text-white" /&gt;
-                                &lt;/div&gt;
-                                
-                                &lt;div className="relative z-10"&gt;
-                                    &lt;h3 className="type-h2 text-3xl mb-4 whitespace-nowrap"&gt;{div.name}&lt;/h3&gt;
-                                    &lt;p className="type-body text-gray-400"&gt;{div.desc}&lt;/p&gt;
-                                &lt;/div&gt;
-                            &lt;/Link&gt;
+<span class="cstat-no" title="statement not covered" >                            &lt;DivisionCard key={i} div={div} i={i} /&gt;</span>
                         ))}
                     &lt;/motion.div&gt;
+&nbsp;
+                    {/* Mobile: Standard Horizontal Scroll */}
+                    &lt;div className="flex lg:hidden overflow-x-auto snap-x snap-mandatory gap-6 px-6 w-full pb-8"&gt;
+                         {divisions.map(<span class="fstat-no" title="function not covered" >(d</span>iv, i) =&gt; (
+<span class="cstat-no" title="statement not covered" >                            &lt;div key={i} className="snap-center shrink-0 first:pl-0 last:pr-6"&gt;</span>
+                                &lt;DivisionCard div={div} i={i} mobile /&gt;
+                            &lt;/div&gt;
+                        ))}
+                    &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/section&gt;
     );
 };
+&nbsp;
+const DivisionCard = <span class="fstat-no" title="function not covered" >({</span> div, i, mobile }) =&gt; (
+<span class="cstat-no" title="statement not covered" >    &lt;Link </span>
+        to={`/divisions/${div.slug}`}
+        className={`
+            flex-shrink-0 relative overflow-hidden flex flex-col justify-between group cursor-pointer transition-all duration-300
+            ${mobile ? 'w-[85vw] h-[400px] p-8 rounded-xl' : 'w-[48vw] min-h-[450px] p-12 rounded-xl hover:-translate-y-2 hover:z-10'}
+            bg-black text-white shadow-2xl shadow-black/50 
+            border border-white/10 hover:border-[#C5A059]
+        `}
+    &gt;
+        {/* Dynamic Inner Glow Blob - Top Right Origin */}
+        &lt;div className="absolute -top-20 -right-20 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(197,160,89,0.25)_0%,transparent_70%)] blur-[80px] opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-150 transition-all duration-700 ease-out pointer-events-none" /&gt;
+&nbsp;
+        &lt;div className="flex justify-between items-start relative z-10"&gt;
+            &lt;span className="type-label text-[#C5A059]"&gt;
+                Division 0{i+1}
+            &lt;/span&gt;
+            &lt;ArrowUpRight className="w-8 h-8 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 text-white" /&gt;
+        &lt;/div&gt;
+        
+        &lt;div className="relative z-10"&gt;
+            &lt;h3 className="type-h2 text-3xl mb-4 whitespace-nowrap"&gt;{div.name}&lt;/h3&gt;
+            &lt;p className="type-body text-gray-400"&gt;{div.desc}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/Link&gt;
+);
 &nbsp;
 export default InstImpact;
 &nbsp;</pre></td></tr></table></pre>
@@ -337,7 +379,7 @@ export default InstImpact;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-19T23:47:33.198Z
+                at 2026-01-20T03:19:35.175Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
