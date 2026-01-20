@@ -1,6 +1,8 @@
 import React, { useEffect, createContext, useContext, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from './components/ui/ErrorFallback';
 import './index.css';
 import Lenis from 'lenis';
 
@@ -84,12 +86,15 @@ function AppContent() {
         </LenisContext.Provider>
     );
 }
+
 function App() {
   return (
-    <Router>
-        <AppContent />
-        <Analytics />
-    </Router>
+    <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => window.location.reload()}>
+        <Router>
+            <AppContent />
+            <Analytics />
+        </Router>
+    </ErrorBoundary>
   );
 }
 
