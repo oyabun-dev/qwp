@@ -1,4 +1,9 @@
-// ... imports
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import Button from '../ui/Button';
+import LanguageSelector from '../ui/LanguageSelector';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 
