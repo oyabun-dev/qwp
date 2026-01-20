@@ -15,7 +15,8 @@ const InstImpact = () => {
     // Transform vertical scroll to horizontal movement
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
 
-    const divisions = t('impact.divisions', { returnObjects: true }) || [];
+    const rawDivisions = t('impact.divisions', { returnObjects: true });
+    const divisions = Array.isArray(rawDivisions) ? rawDivisions : [];
 
     return (
         <section id="divisions" ref={targetRef} className="relative lg:h-[500vh] bg-white section-standard text-black border-t border-gray-100 pb-24 lg:pb-0">

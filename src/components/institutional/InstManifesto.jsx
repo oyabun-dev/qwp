@@ -12,7 +12,8 @@ const InstManifesto = () => {
 
     const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
-    const values = t('manifesto.values', { returnObjects: true }) || [];
+    const rawValues = t('manifesto.values', { returnObjects: true });
+    const values = Array.isArray(rawValues) ? rawValues : [];
 
     return (
         <section id="manifesto" className="py-24 md:py-32 bg-white text-black relative border-t border-gray-100">
